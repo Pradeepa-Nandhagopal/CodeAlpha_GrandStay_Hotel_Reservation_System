@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment | GrandStay</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">GRAND<span>STAY</span></a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="my-bookings.html">My Bookings</a>
+    
+        <a href="room-search.html">Search Rooms</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="profile.html">My Account</a>
+        </nav>
+</header>
+
+<section class="payment-hero">
+    <p class="eyebrow">SECURE YOUR RESERVATION</p>
+    <h1>Complete Your Payment</h1>
+    <p>One more step towards a wonderful stay.</p>
+</section>
+
+<main class="payment-section">
+    <div class="payment-card">
+
+        <h2>Booking Summary</h2>
+
+        <div class="payment-summary">
+            <p>Booking ID: <strong id="bookingId">-</strong></p>
+            <p>Total Amount:</p>
+            <h2 id="paymentAmount">₹0</h2>
+        </div>
+
+        <h2>Select Payment Method</h2>
+
+        <form id="paymentForm">
+
+            <label class="payment-option">
+                <input type="radio" name="paymentMethod"
+                       value="UPI" required>
+                UPI Payment
+            </label>
+
+            <label class="payment-option">
+                <input type="radio" name="paymentMethod"
+                       value="CARD">
+                Credit / Debit Card
+            </label>
+
+            <label class="payment-option">
+                <input type="radio" name="paymentMethod"
+                       value="CASH">
+                Cash Payment
+            </label>
+
+            <button type="submit" id="payButton">
+                Pay Now
+            </button>
+
+            <p id="paymentMessage"></p>
+
+        </form>
+    </div>
+</main>
+
+<footer>
+    <h2>GRANDSTAY</h2>
+    <p>Where every stay becomes a beautiful memory.</p>
+    <p>© 2026 GrandStay Hotel. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guest Reviews | GrandStay</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+  <a href="index.html" class="logo">GRAND<span>STAY</span></a>
+  <nav><a href="index.html">Home</a><a href="rooms.html">Rooms</a><a href="my-bookings.html">My Bookings</a><a href="profile.html">My Account</a></nav>
+</header>
+<section class="rooms-hero"><p class="eyebrow">GUEST EXPERIENCES</p><h1>Customer Reviews</h1><p>Share your experience at GrandStay.</p></section>
+<main class="feature-page">
+  <form id="reviewForm" class="feature-form">
+    <h2>Write a Review</h2>
+    <label for="customerId">Customer ID</label><input id="customerId" type="number" min="1" required>
+    <label for="bookingId">Booking ID</label><input id="bookingId" type="number" min="1" required>
+    <label for="rating">Rating</label>
+    <select id="rating" required><option value="5">5 - Excellent</option><option value="4">4 - Very good</option><option value="3">3 - Good</option><option value="2">2 - Fair</option><option value="1">1 - Poor</option></select>
+    <label for="comment">Comment</label><textarea id="comment" rows="4" maxlength="1000" placeholder="Write your feedback"></textarea>
+    <button class="feature-button" type="submit">Submit Review</button>
+    <p id="reviewMessage" aria-live="polite"></p>
+  </form>
+  <h2>Recent Reviews</h2>
+  <section id="reviewList" class="feature-grid" aria-live="polite">Loading reviews...</section>
+</main>
+<footer><h2>GRANDSTAY</h2><p>Where every stay becomes a beautiful memory.</p></footer>
+<script src="reviews.js"></script>
+</body>
+</html>

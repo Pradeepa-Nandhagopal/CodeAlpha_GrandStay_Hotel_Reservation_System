@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In | GrandStay</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      background: #f7f5ef;
+      font-family: Arial, sans-serif;
+    }
+
+    .auth-section {
+      min-height: 75vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 45px 20px;
+    }
+
+    .auth-card {
+      background: white;
+      width: 100%;
+      max-width: 420px;
+      padding: 38px;
+      box-sizing: border-box;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
+
+    .auth-card h1 {
+      color: #173c35;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .auth-subtitle {
+      color: #777;
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    .auth-card label {
+      display: block;
+      margin: 17px 0 8px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .auth-card input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 13px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    .auth-card input:focus {
+      outline: none;
+      border-color: #173c35;
+    }
+
+    .auth-button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 24px;
+      background: #173c35;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .auth-button:hover {
+      background: #24584d;
+    }
+
+    .auth-switch {
+      text-align: center;
+      margin-top: 22px;
+      color: #777;
+      font-size: 14px;
+    }
+
+    .auth-switch button {
+      background: none;
+      border: none;
+      color: #173c35;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .auth-message {
+      margin-top: 14px;
+      font-size: 14px;
+    }
+
+    .password-toggle {
+      display: flex !important;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: normal !important;
+    }
+
+    .password-toggle input {
+      width: auto;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 500px) {
+      .auth-card {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <a href="index.html" class="logo">GRAND<span>STAY</span></a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="rooms.html">Rooms</a>
+    <a href="my-bookings.html">My Bookings</a>
+    <a href="reviews.html">Reviews</a>
+  </nav>
+</header>
+
+<section class="auth-section">
+
+  <div class="auth-card">
+
+    <!-- LOGIN FORM -->
+    <div id="loginSection">
+
+      <h1>Welcome Back!</h1>
+
+      <p class="auth-subtitle">
+        Sign in to continue your GrandStay experience.
+      </p>
+
+      <form id="loginForm">
+
+        <label for="loginEmail">Email Address</label>
+        <input
+                id="loginEmail"
+                type="email"
+                placeholder="Enter your email"
+                required
+        >
+
+        <label for="loginPassword">Password</label>
+        <input
+                id="loginPassword"
+                type="password"
+                placeholder="Enter your password"
+                required
+        >
+
+        <label class="password-toggle">
+          <input type="checkbox"
+                 onchange="togglePassword('loginPassword', this)">
+          Show password
+        </label>
+
+        <button class="auth-button" type="submit">
+          Sign In
+        </button>
+
+        <a href="forgot-password.html">Forgot Password?</a>
+
+        <p id="loginMessage" class="auth-message"
+           aria-live="polite"></p>
+
+      </form>
+
+      <p class="auth-switch">
+        Don't have an account?
+        <button type="button" onclick="showRegister()">
+          Create Account
+        </button>
+      </p>
+
+    </div>
+
+    <!-- REGISTER FORM -->
+    <div id="registerSection" hidden>
+
+      <h1>Create Account</h1>
+
+      <p class="auth-subtitle">
+        Join GrandStay and enjoy a comfortable stay.
+      </p>
+
+      <form id="registerForm">
+
+        <label for="registerEmail">Email Address</label>
+        <input
+                id="registerEmail"
+                type="email"
+                placeholder="Enter your email"
+                required
+        >
+
+        <label for="registerPassword">Password</label>
+        <input
+                id="registerPassword"
+                type="password"
+                placeholder="Minimum 8 characters"
+                minlength="8"
+                required
+        >
+
+        <label class="password-toggle">
+          <input type="checkbox"
+                 onchange="togglePassword('registerPassword', this)">
+          Show password
+        </label>
+
+        <button class="auth-button" type="submit">
+          Create Account
+        </button>
+
+        <p id="registerMessage" class="auth-message"
+           aria-live="polite"></p>
+
+      </form>
+
+      <p class="auth-switch">
+        Already have an account?
+        <button type="button" onclick="showLogin()">
+          Sign In
+        </button>
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  <h2>GRANDSTAY</h2>
+  <p>Where every stay becomes a beautiful memory.</p>
+</footer>
+
+<script>
+  function showRegister() {
+    document.getElementById("loginSection").hidden = true;
+    document.getElementById("registerSection").hidden = false;
+    document.title = "Create Account | GrandStay";
+  }
+
+  function showLogin() {
+    document.getElementById("registerSection").hidden = true;
+    document.getElementById("loginSection").hidden = false;
+    document.title = "Sign In | GrandStay";
+  }
+
+  function togglePassword(inputId, checkbox) {
+    document.getElementById(inputId).type =
+            checkbox.checked ? "text" : "password";
+  }
+</script>
+
+<script src="profile.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Rooms | GrandStay</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+  <a href="index.html" class="logo">GRAND<span>STAY</span></a>
+  <nav>
+    <a href="index.html">Home</a><a href="rooms.html">Rooms</a>
+    <a href="booking.html">Book</a><a href="my-bookings.html">My Bookings</a>
+    <a href="reviews.html">Reviews</a><a href="profile.html">My Account</a>
+  </nav>
+</header>
+<section class="rooms-hero">
+  <p class="eyebrow">FIND YOUR ROOM</p><h1>Search Available Rooms</h1>
+  <p>Filter rooms by your preferences.</p>
+</section>
+<main class="feature-page">
+  <form id="roomSearchForm" class="feature-form">
+    <label for="roomType">Room type</label>
+    <select id="roomType" name="roomType">
+      <option value="">Any room type</option>
+      <option value="Standard">Standard</option>
+      <option value="Deluxe">Deluxe</option>
+      <option value="Suite">Suite</option>
+    </select>
+    <label for="minPrice">Minimum price (₹)</label>
+    <input id="minPrice" name="minPrice" type="number" min="0" placeholder="0">
+    <label for="maxPrice">Maximum price (₹)</label>
+    <input id="maxPrice" name="maxPrice" type="number" min="0" placeholder="No limit">
+    <button type="submit" class="feature-button">Search Rooms</button>
+  </form>
+  <section id="roomSearchResults" class="feature-grid" aria-live="polite">Enter filters and search for rooms.</section>
+</main>
+<footer><h2>GRANDSTAY</h2><p>Where every stay becomes a beautiful memory.</p></footer>
+<script src="room-search.js"></script>
+</body>
+</html>

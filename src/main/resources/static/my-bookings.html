@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings | GrandStay</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">GRAND<span>STAY</span></a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="my-bookings.html">My Bookings</a>
+    
+        <a href="room-search.html">Search Rooms</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="profile.html">My Account</a>
+        </nav>
+</header>
+
+<section class="mybookings-hero">
+    <p class="eyebrow">YOUR GRANDSTAY ACCOUNT</p>
+    <h1>My Bookings</h1>
+    <p>View and manage your hotel reservations.</p>
+</section>
+
+<main class="mybookings-section">
+
+    <div class="mybookings-heading">
+        <h2>Booking History</h2>
+        <button id="refreshBookings">Refresh</button>
+    </div>
+
+    <div id="bookingsContainer">
+        <p>Loading your bookings...</p>
+    </div>
+
+    <p id="myBookingMessage"></p>
+
+    <a href="invoice.html" class="explore-link">View / Print Latest Invoice</a>
+    <br>
+    <a href="rooms.html" class="explore-link">
+        Explore More Rooms
+    </a>
+
+</main>
+
+<footer>
+    <h2>GRANDSTAY</h2>
+    <p>Where every stay becomes a beautiful memory.</p>
+    <p>© 2026 GrandStay Hotel. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
